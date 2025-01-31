@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+ <html lang="en">
+ 
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Add Details Page</title>
+     
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+ </head>
+ 
+ <body>
+     <div class="container mt-5">
+         <h2 class="text-center mb-4">Edit Details</h2>
+         <form action="" method="post" class="p-4 shadow-sm bg-white rounded" enctype="multipart/form-data">
+             {% csrf_token %}
+              <div class="form-group">
+                 <label for="pid"><b> ID</b></label>
+                 <input type="text" class="form-control" name="proid" value="{{data.proid}}" id="pid" placeholder="Enter product ID" required value="{{data.pid}}">
+             </div>
+  
+             <div class="form-group">
+                 <label for="name"><b> name</b></label>
+                 <input type="text" class="form-control" name="name" value="{{data.name}}" id="name" placeholder="Enter name" required value="{{data.name}}">
+             </div>
+             <div class="form-group">
+                <label for="specialty"><b>specialty</b></label>
+                <input type="text" class="form-control" name="specialty" value="{{data.speciality}}"id="specialty" placeholder="Enter specialty" required value="{{data.specialty}}">
+            </div>
+ 
+             
+ 
+             <!-- <div class="form-group">
+                 <label for="available_days"><b>available_days</b></label>
+                 <input type="number" class="form-control" name="available_days" value="{{data.available_days}}"id="available_days" placeholder="Enter available_days" required value="{{data.available_days}}">
+             </div> -->
+
+             <div class="form-group">
+                <label for=" available_days"><b> available_days</b></label>
+                <textarea class="form-control" name=" available_days" id=" available_days" rows="3" placeholder="Enter  available_days"></textarea>
+            </div>
+
+ 
+             <div class="form-group">
+                 <label for="available_time_start"><b>available_time_start</b></label>
+                 <input type="time" class="form-control" name="available_time_start"  value="{{data.available_time_start}}"id="available_time_start" placeholder="Enter available_time_start"value="{{data.available_time_start}}">
+             </div>
+ 
+             <div class="form-group">
+                 <label for="available_time_end"><b>available_time_end</b></label>
+                 <input type="time" class="form-control" name="available_time_end" value="{{data.available_time_end}}" id="available_time_end" placeholder="Enter available_time_end" required value="{{data.available_time_end}}">
+             </div>
+ 
+             <!-- <div class="form-group">
+                 <label for="image"><b>Image</b></label>
+                 <input type="file" class="form-control-file" name="img" id="image" >
+             </div>
+             <div>
+                <img src="{{data.img.url}}" alt="" style="width: 100px; height: 100px;">
+             </div>
+  -->
+             <button type="submit" class="btn btn-primary btn-block">submit</button>
+         </form>
+     </div>
+ 
+     
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </body>
+ 
+ </html>
+ 
