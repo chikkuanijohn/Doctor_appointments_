@@ -28,7 +28,10 @@ class Appointment(models.Model):
     Appointmentdate = models.CharField(max_length=100)
     Reasonforappointment = models.TextField(max_length=100)
     email =models.EmailField() 
+    doctor_name = models.CharField(max_length=255, default="Dr. name")  # Default value
 
+    def __str__(self):
+        return f"{self.name} - {self.appointment_date} with {self.doctor_name}"
 
 
 class Contact(models.Model):

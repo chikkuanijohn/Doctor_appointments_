@@ -10,6 +10,8 @@ from django.core.mail import send_mail
 from .models import Doctor, Appointment 
 from .models import Appointment 
 from .forms import ContactForm
+from .models import Appointment
+
 # Create your views here.
 
 def doctor_appointment_login(req):
@@ -289,3 +291,4 @@ def contact_view(request):
         form = ContactForm()
     
     return render(request, 'contact.html', {'form': form})
+
