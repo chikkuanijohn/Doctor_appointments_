@@ -30,5 +30,5 @@ urlpatterns=[
     path('contact/', contact_view, name='contact'),
     path("book-appointment/", views.book_appointment, name="book_appointment"),
     path("success/", views.success, name="success"),  # Success page
-   
+    path('view_bookings/', views.view_bookings, name='view_bookings'),
 ]                     

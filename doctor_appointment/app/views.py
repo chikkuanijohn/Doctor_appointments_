@@ -11,6 +11,8 @@ from .models import Doctor, Appointment
 from .models import Appointment 
 from .forms import ContactForm
 from .models import Appointment
+from django.template.loader import get_template  
+
 
 # Create your views here.
 
@@ -291,4 +293,14 @@ def contact_view(request):
         form = ContactForm()
     
     return render(request, 'contact.html', {'form': form})
+def view_bookings(request):
+    from django.template.loader import get_template  # Debugging step
 
+    # Check if Django can locate the template
+    try:
+        get_template('view_bookings.html')
+    except Exception as e:
+        print(f"Error loading template: {e}")
+
+    bookings = Appointment.objects.all()  
+    return render(request, 'view_bookings.html', {'view_bookings': bookings})

@@ -188,30 +188,29 @@
             <div class="badge">6</div>
         </div> -->
     </header>
-      <div class="container">
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">📅 Your Booked Appointments</h2>
+    
         <div class="row">
-          {% for i in view_bookings %}
-          <!-- <div class="col-lg-12">
-            <img src="{{ i.product.img.url }}" alt="product image">
-          </div> -->
-          <div class="col-md-7">
-            <h1 class="mb-3">{{i.Patient.name}}</h1>
-            <p>age:<span class="text-success fw-">${{br.age}}</span></p>
-            <p>Appointmentdate:<span class="text-success fw-">${{i.Appointmentdate}}</span></p>
-            <p>Reasonforappointment :<span class="text-success fw-">${{i.Reasonforappointment }}</span></p>
-            <p> email:<span class="text-success fw-">${{i.email  }}</span></p>
-            <!-- <p>qty:<span class="text-success fw-">${{br.qty}}</span></p> -->
-
-
-          </div>
-            <!-- Name:{{i.product.name}} 
-            price:{{i.product.offer_price}} <br> -->
-           
-          </div>
-          {% endfor %}
-  
+            {% for booking in view_bookings %}
+            <div class="col-md-6">
+                <div class="card" style="width: 100%; margin-bottom: 20px;">
+                    <div class="card-body">
+                        <h4 class="card-title">Patient: {{ booking.name }}</h4>
+                        <p class="card-text"><strong>Age:</strong> {{ booking.age }}</p>
+                        <p class="card-text"><strong>Doctor:</strong> {{ booking.doctor_name }}</p>
+                        <p class="card-text"><strong>Appointment Date:</strong> {{ booking.appointment_date }}</p>
+                        <p class="card-text"><strong>Reason:</strong> {{ booking.reason_for_appointment }}</p>
+                        <p class="card-text"><strong>Email:</strong> {{ booking.email }}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <p class="text-center">No bookings found.</p>
+            {% endfor %}
         </div>
-        
+    </div>
+    
   
   
       </div> 
