@@ -172,7 +172,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">Family Doctor X</div>
+        <div class="logo">ASDM Fam Hospital</div>
         <nav>
             <ul>
                 <li><a href="add details">add_details</a></li>
@@ -191,7 +191,7 @@
     <div class="container mt-4">
         <h2 class="text-center mb-4">📅 Your Booked Appointments</h2>
     
-        <div class="row">
+        <!-- <div class="row">
             {% for booking in view_bookings %}
             <div class="col-md-6">
                 <div class="card" style="width: 100%; margin-bottom: 20px;">
@@ -209,8 +209,43 @@
             <p class="text-center">No bookings found.</p>
             {% endfor %}
         </div>
-    </div>
+    </div> -->
+    <h2>Booked Appointments</h2>
     
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Appointment Date</th>
+                <th>Reason</th>
+                <th>Email</th>
+                <th>Doctor</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+            <tr>
+                <td>{{ appointment.name }}</td>
+                <td>{{ appointment.age }}</td>
+                <td>{{ appointment.appointment_date }}</td>
+                <td>{{ appointment.reason_for_appointment }}</td>
+                <td>{{ appointment.email }}</td>
+                <td>{{ appointment.doctor_name }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">No appointments found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
   
   
       </div> 

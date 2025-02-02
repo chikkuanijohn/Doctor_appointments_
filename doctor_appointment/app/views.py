@@ -171,20 +171,47 @@ def booking(request):
 
 
 
-def view_bookings(request):
-    if request.method =='POST':
-         Name=request.POST['name']
-         age=request.POST['age']
-         Appointmentdate=request.POST['appointmentdate']
-         Reasonforappointment=request.POST['reasonforappointment']
-         email=request.POST['email']
+# def view_bookings(request):
+#     if request.method =='POST':
+#          Name=request.POST['name']
+#          age=request.POST['age']
+#          Appointmentdate=request.POST['appointmentdate']
+#          Reasonforappointment=request.POST['reasonforappointment']
+#          email=request.POST['email']
 
-         if Name and age and Appointmentdate and Reasonforappointment and email:
-             data = Appointment(Name=Name,age=age, Appointmentdate=Appointmentdate,Reasonforappointment=Reasonforappointment,email=email)
-             data.save()
-             return redirect('admin_home')
-    patient=Patient.objects.all()
-    return render(request,'admin/view_bookings.html', {'patient': patient})
+#          if Name and age and Appointmentdate and Reasonforappointment and email:
+#              data = Appointment(Name=Name,age=age, Appointmentdate=Appointmentdate,Reasonforappointment=Reasonforappointment,email=email)
+#              data.save()
+#              return redirect('admin_home')
+#     patient=Patient.objects.all()
+#     return render(request,'view_bookings.html', {'patient': patient})
+
+
+
+
+def view_bookings(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')  # Match form field names
+        age = request.POST.get('age')
+        appointment_date = request.POST.get('appointmentdate')
+        reason = request.POST.get('reasonforappointment')
+        email = request.POST.get('email')
+
+        if name and age and appointment_date and reason and email:
+            data = Appointment(
+                name=name, 
+                age=age, 
+                appointment_date=appointment_date,
+                reason_for_appointment=reason, 
+                email=email
+            )
+            data.save()
+            messages.success(request, "Booking successful!")
+            return redirect('admin_home')  # Ensure this URL exists in `urls.py`
+
+    # Fetch all booked appointments
+    appointments = Appointment.objects.all()
+    return render(request, 'view_bookings.html', {'appointments': appointments})  
 
 
         
@@ -283,24 +310,3 @@ def success(request):
 
 
 
-def contact_view(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()  # Save the form data to the database
-            return render(request, 'contact.html', {'form': form, 'message': 'Your message has been sent successfully!'})
-    else:
-        form = ContactForm()
-    
-    return render(request, 'contact.html', {'form': form})
-def view_bookings(request):
-    from django.template.loader import get_template  # Debugging step
-
-    # Check if Django can locate the template
-    try:
-        get_template('view_bookings.html')
-    except Exception as e:
-        print(f"Error loading template: {e}")
-
-    bookings = Appointment.objects.all()  
-    return render(request, 'view_bookings.html', {'view_bookings': bookings})

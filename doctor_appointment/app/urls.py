@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from .views import contact_view
+# from .views import contact_view
 from .views import book_appointment
 from . import views
 
@@ -27,7 +27,7 @@ urlpatterns=[
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
-    path('contact/', contact_view, name='contact'),
+    # path('contact/', contact_view, name='contact'),
     path("book-appointment/", views.book_appointment, name="book_appointment"),
     path("success/", views.success, name="success"),  # Success page
     path('view_bookings/', views.view_bookings, name='view_bookings'),

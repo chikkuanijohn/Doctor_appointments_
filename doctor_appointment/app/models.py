@@ -27,6 +27,7 @@ class Appointment(models.Model):
     age = models.PositiveIntegerField()
     Appointmentdate = models.CharField(max_length=100)
     Reasonforappointment = models.TextField(max_length=100)
+ 
     email =models.EmailField() 
     doctor_name = models.CharField(max_length=255, default="Dr. name")  # Default value
 
