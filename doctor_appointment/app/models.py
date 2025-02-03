@@ -7,7 +7,7 @@ class Doctor(models.Model):
     name = models.TextField()
     specialty = models.CharField(max_length=100)
     contact_number = models.CharField(max_length=15)
-    available_days = models.CharField(max_length=100)  
+    available_day = models.CharField(max_length=100)  
     available_time_start = models.TimeField()
     available_time_end = models.TimeField()
     
@@ -29,11 +29,11 @@ class Appointment(models.Model):
     Reasonforappointment = models.TextField(max_length=100)
  
     email =models.EmailField() 
-    doctor_name = models.CharField(max_length=255, default="Dr. name")  # Default value
+    doctor_name = models.ForeignKey(Doctor,on_delete=models.CASCADE)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.name} - {self.appointment_date} with {self.doctor_name}"
-
 
 class Contact(models.Model):
     name = models.CharField(max_length=100)

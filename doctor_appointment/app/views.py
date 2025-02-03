@@ -5,12 +5,12 @@ from .models import *
 import os
 from django.contrib.auth.models import User
 from django.conf import settings
-from .models import Patient
+# from .models import Patient
 from django.core.mail import send_mail
-from .models import Doctor, Appointment 
-from .models import Appointment 
+# from .models import Doctor, Appointment 
+# from .models import Appointment 
 from .forms import ContactForm
-from .models import Appointment
+# from .models import Appointment
 from django.template.loader import get_template  
 
 
@@ -232,13 +232,13 @@ def add_details(req):
             name = req.POST['name']
             specialty = req.POST['specialty']
              
-            available_days = req.POST['available_days']
+            available_day = req.POST['available_day']
             available_time_start = req.POST['available_time_start']
             available_time_end= req.POST['available_time_end']
             # file = req.FILES['img']
 
             data = Doctor.objects.create(
-                 name=name, specialty=specialty,  available_days= available_days,
+                name=name, specialty=specialty,  available_day= available_day,
                 available_time_start=available_time_start,available_time_end=available_time_end)
                
             data.save()
@@ -288,20 +288,28 @@ def delete_details(req,pid):
 def book_appointment(request):
     if request.method == 'POST':
         Name = request.POST['name']
+       
+        print(Name)
         age = request.POST['age']
         Appointmentdate = request.POST['appointmentdate']
         Reasonforappointment = request.POST['reasonforappointment']
         email = request.POST['email']
-        
-        data = Appointment(Name=Name, age=age, Appointmentdate=Appointmentdate, Reasonforappointment=Reasonforappointment, email=email)
+        # doctor_name=request.POST['doctor_name']
+        doctor_name=Doctor.objects.get()
+        user=User.objects.get(username=request.session['user'])
        
+        
+        data = Appointment(Name=Name, age=age, Appointmentdate=Appointmentdate, Reasonforappointment=Reasonforappointment, email=email, doctor_name= doctor_name,user=user)
+        
+        data.save()
         
       
         messages.success(request, '')
         
         return redirect('success')  
-    patient = Appointment.objects.all()  
-    return render(request, 'user/book_appointment.html', {'book_appointment': patient})
+    doctors= Doctor.objects.all()
+    
+    return render(request, 'user/book_appointment.html', {'doctor': doctors})
 
 
 def success(request):
