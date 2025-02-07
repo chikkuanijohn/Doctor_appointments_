@@ -1,224 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Care Landing Page with Products</title>
+    <title>Appointment List</title>
     <style>
-        /* General body styling */
         body {
-            margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #e5e5e5;
-            color: #333;
-        }
-
-        /* Header styling */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        header .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-        }
-
-        header nav ul {
-            list-style: none;
-            padding: 0;
+            background-color: #f4f4f4;
             margin: 0;
-            display: flex;
+            padding: 20px;
         }
-
-        header nav ul li {
-            margin: 0 15px;
-        }
-
-        header nav ul li a {
-            text-decoration: none;
+        h1 {
+            text-align: center;
             color: #333;
-            font-size: 1rem;
-            transition: color 0.3s;
         }
-
-        header nav ul li a:hover {
-            color: #007bff;
-        }
-
-        header .notifications {
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        header .notifications .bell {
-            font-size: 1.5rem;
-            color: #333;
-            margin-right: 10px;
-        }
-
-        header .notifications .badge {
-            position: absolute;
-            top: -5px;
-            right: 5px;
-            background-color: #ff0000;
-            color: #fff;
-            border-radius: 50%;
-            font-size: 0.8rem;
-            padding: 2px 6px;
-        }
-
-        /* Main section styling */
-        .main {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 60px;
-        }
-
-        .main .content {
-            max-width: 50%;
-        }
-
-        .main .content h1 {
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .main .content p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .main .content .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            font-size: 1rem;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .main .content .btn:hover {
-            background-color: #0056b3;
-        }
-
-        .main .image img {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-
-        /* Product cards section */
-        .container {
-            padding: 40px;
-        }
-
-        .card {
-            margin: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
             background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        .card-img-top {
-            max-width: 100%;
-            height: auto;
-            display: block;
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
         }
-
-        .card-body {
-            padding: 15px;
-        }
-
-        .card-title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .card-text {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 10px 15px;
+        th {
             background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-right: 10px;
-            transition: background-color 0.3s;
+            color: white;
+            font-weight: bold;
         }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        td {
+            color: #555;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">ASDM Fam Hospital</div>
-        <nav>
-            <ul>
-                <li><a href="add details">add_details</a></li>
-                <!-- <li><a href="">Services</a></li> -->
-                <li><a href="view_bookings">view_bookings</a></li>
-                <!-- <li><a href="Contact Us">Contact Us</a></li>
-                <li><a href="Manage">Manage</a></li> -->
-                <li><a href="logout">logout</a></li>
-            </ul>
-        </nav>
-        <!-- <div class="notifications">
-            <i class="bell">🔔</i>
-            <div class="badge">6</div>
-        </div> -->
-    </header>
-    <div class="container mt-4">
-        <h2 class="text-center mb-4">📅 Your Booked Appointments</h2>
-    
-        <!-- <div class="row">
-            {% for booking in view_bookings %}
-            <div class="col-md-6">
-                <div class="card" style="width: 100%; margin-bottom: 20px;">
-                    <div class="card-body">
-                        <h4 class="card-title">Patient: {{ booking.name }}</h4>
-                        <p class="card-text"><strong>Age:</strong> {{ booking.age }}</p>
-                        <p class="card-text"><strong>Doctor:</strong> {{ booking.doctor_name }}</p>
-                        <p class="card-text"><strong>Appointment Date:</strong> {{ booking.appointment_date }}</p>
-                        <p class="card-text"><strong>Reason:</strong> {{ booking.reason_for_appointment }}</p>
-                        <p class="card-text"><strong>Email:</strong> {{ booking.email }}</p>
-                    </div>
-                </div>
-            </div>
-            {% empty %}
-            <p class="text-center">No bookings found.</p>
-            {% endfor %}
-        </div>
-    </div> -->
-    <h2>Booked Appointments</h2>
-    
-    {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-success">{{ message }}</div>
-        {% endfor %}
-    {% endif %}
-    
-    <table border="1">
+    <h1>Appointment List</h1>
+    <table>
         <thead>
             <tr>
                 <th>Name</th>
@@ -232,22 +59,15 @@
         <tbody>
             {% for appointment in appointments %}
             <tr>
-                <td>{{ appointment.name }}</td>
+                <td>{{ appointment.Name }}</td>
                 <td>{{ appointment.age }}</td>
-                <td>{{ appointment.appointment_date }}</td>
-                <td>{{ appointment.reason_for_appointment }}</td>
+                <td>{{ appointment.Appointmentdate }}</td>
+                <td>{{ appointment.Reasonforappointment }}</td>
                 <td>{{ appointment.email }}</td>
-                <td>{{ appointment.doctor_name }}</td>
-            </tr>
-            {% empty %}
-            <tr>
-                <td colspan="6">No appointments found.</td>
+                <td>{{ appointment.doctor_name.name }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-  
-  
-      </div> 
 </body>
 </html>

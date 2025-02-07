@@ -10,7 +10,8 @@ from django.core.mail import send_mail
 # from .models import Doctor, Appointment 
 # from .models import Appointment 
 from .forms import ContactForm
-# from .models import Appointment
+from .models import Appointment, Doctor
+
 from django.template.loader import get_template  
 
 
@@ -189,33 +190,32 @@ def booking(request):
 
 
 
-def view_bookings(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')  # Match form field names
-        age = request.POST.get('age')
-        appointment_date = request.POST.get('appointmentdate')
-        reason = request.POST.get('reasonforappointment')
-        email = request.POST.get('email')
+# def view_bookings(request):
+#     if request.method == 'POST':
+#         name = request.POST.get('name')  
+#         age = request.POST.get('age')
+#         appointment_date = request.POST.get('appointmentdate')
+#         reason = request.POST.get('reasonforappointment')
+#         email = request.POST.get('email')
 
-        if name and age and appointment_date and reason and email:
-            data = Appointment(
-                name=name, 
-                age=age, 
-                appointment_date=appointment_date,
-                reason_for_appointment=reason, 
-                email=email
-            )
-            data.save()
-            messages.success(request, "Booking successful!")
-            return redirect('admin_home')  # Ensure this URL exists in `urls.py`
+#         if name and age and appointment_date and reason and email:
+#             data = Appointment(
+#                 name=name, 
+#                 age=age, 
+#                 appointment_date=appointment_date,
+#                 reason_for_appointment=reason, 
+#                 email=email
+#             )
+#             data.save()
+#             messages.success(request, "Booking successful!")
+#             return redirect('admin_home')  
 
-    # Fetch all booked appointments
-    appointments = Appointment.objects.all()
-    return render(request, 'view_bookings.html', {'appointments': appointments})  
+    
+#     appointments = Appointment.objects.all()
+#     return render(request, 'view_bookings.html', {'appointments': appointments})  
 
 
-        
-             
+
 
 
     
@@ -308,6 +308,7 @@ def book_appointment(request):
         
         return redirect('success')  
     doctors= Doctor.objects.all()
+  
     
     return render(request, 'user/book_appointment.html', {'doctor': doctors})
 
@@ -316,5 +317,57 @@ def success(request):
     return render(request, 'success.html')
 
 
+
+# def view_bookings(request):
+#     if request.method == 'POST':
+#         name = request.POST.get('name')
+#         age = request.POST.get('age')
+#         appointment_date = request.POST.get('appointmentdate')
+#         reason = request.POST.get('reasonforappointment')
+#         email = request.POST.get('email')
+
+#         if name and age and appointment_date and reason and email:
+#             data = Appointment(
+#                 name=name, 
+#                 age=age, 
+#                 appointment_date=appointment_date,
+#                 reason_for_appointment=reason, 
+#                 email=email
+#             )
+#             data.save()
+#             messages.success(request, "Booking successful!")
+#             return redirect('admin_home')  
+
+   
+#     appointments = Appointment.objects.select_related('doctor_name').all()
+  
+#     return render(request, 'view_bookings.html', {'appointments': appointments})
+
+
+
+def view_bookings(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        age = request.POST.get('age')
+        appointment_date = request.POST.get('appointmentdate')
+        reason = request.POST.get('reasonforappointment')
+        email = request.POST.get('email')
+
+        if name and age and appointment_date and reason and email:
+            data = Appointment(
+                Name=name,  # Ensure this matches the model field
+                age=age,
+                Appointmentdate=appointment_date,  # Ensure this matches the model field
+                Reasonforappointment=reason,  # Ensure this matches the model field
+                email=email,
+                doctor_name=Doctor.objects.get(id=1),  # Example: Assign a doctor
+                user=request.user  # Assign the logged-in user
+            )
+            data.save()
+            messages.success(request, "Booking successful!")
+            return redirect('admin_home')
+
+    appointments = Appointment.objects.select_related('doctor_name').all()
+    return render(request, 'view_bookings.html', {'appointments': appointments})
 
 
