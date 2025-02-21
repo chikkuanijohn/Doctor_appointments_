@@ -295,7 +295,10 @@ def book_appointment(request):
         Reasonforappointment = request.POST['reasonforappointment']
         email = request.POST['email']
         # doctor_name=request.POST['doctor_name']
-        doctor_name=Doctor.objects.get()
+        doctor_id = request.POST.get('doctor_id')  # Get doctor ID from form
+        doctor_name = Doctor.objects.get(id=doctor_id)  # Fetch specific doctor
+
+        # doctor_name=Doctor.objects.get()
         user=User.objects.get(username=request.session['user'])
        
         
@@ -369,5 +372,3 @@ def view_bookings(request):
 
     appointments = Appointment.objects.select_related('doctor_name').all()
     return render(request, 'view_bookings.html', {'appointments': appointments})
-
-
