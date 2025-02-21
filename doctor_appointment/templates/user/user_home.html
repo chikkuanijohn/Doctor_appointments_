@@ -10,11 +10,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #f4f4f4;
+            background-color: #1e1e2f;
+            color: #ffffff;
         }
 
         /* Header */
@@ -22,14 +23,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #0073e6;
+            background: #2a2a40;
             padding: 15px 30px;
-            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .logo {
             font-size: 22px;
             font-weight: bold;
+            color: #00d1b2;
         }
 
         nav {
@@ -45,8 +47,13 @@
 
         .nav-links li a {
             text-decoration: none;
-            color: white;
+            color: #ffffff;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-links li a:hover {
+            color: #00d1b2;
         }
 
         .menu-toggle {
@@ -61,6 +68,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 50px;
+            background-color: #2a2a40;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .content {
@@ -69,29 +80,37 @@
 
         h1 {
             font-size: 36px;
-            color: #333;
+            color: #ffffff;
         }
 
         p {
             margin: 10px 0;
             font-size: 18px;
+            color: #cccccc;
         }
 
         .btn {
             display: inline-block;
             margin-top: 10px;
-            padding: 10px 20px;
-            background: #0073e6;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #00d1b2, #009e8e);
             color: white;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 209, 178, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 209, 178, 0.5);
         }
 
         .image img {
             width: 100%;
             max-width: 400px;
-            border-radius: 10px;
+            border-radius: 15px;
         }
 
         /* Responsive Design */
@@ -102,7 +121,7 @@
                 position: absolute;
                 top: 60px;
                 right: 0;
-                background: #0073e6;
+                background: #2a2a40;
                 width: 100%;
                 text-align: center;
                 padding: 10px 0;
@@ -136,8 +155,197 @@
             }
 
             .btn {
-                padding: 8px 15px;
+                padding: 10px 20px;
             }
+        }
+
+        /* Doctors Section */
+        .container {
+            padding: 40px;
+        }
+
+        .card {
+            background-color: #2a2a40;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #00d1b2, #009e8e);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 209, 178, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 209, 178, 0.5);
+        }
+
+        /* Services Section */
+        .services-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #2a2a40;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .services-section h1 {
+            font-size: 2em;
+            color: #ffffff;
+            margin-bottom: 30px;
+        }
+
+        .services-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .service-box {
+            background-color: #3a3a5a;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .service-box img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+        }
+
+        .service-box h2 {
+            font-size: 1.2em;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .service-box p {
+            font-size: 0.95em;
+            color: #cccccc;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2a2a40;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 15px;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #00d1b2;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #00d1b2;
+        }
+
+        .footer-section p {
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .footer-section .social-icons a img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .footer-section .social-icons a img:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #cccccc;
+        }
+
+        .footer-bottom a {
+            color: #00d1b2;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: #009e8e;
         }
     </style>
     <script>
@@ -152,106 +360,44 @@
     </script>
 </head>
 <body>
+    <header>
+        <div class="logo">ASDM Fam Hospital</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="About">About</a></li>
+                <li><a href="check_up_packages">Check-up Packages</a></li>
+                <li><a href="Testimonals">Testimonials</a></li>
+                <li><a href="Contact">Contact</a></li>
+                <li><a href="Our_specialities">Our Specialities</a></li>
+                <li><a href="logout">Logout</a></li>
+            </ul>
+            <div class="menu-toggle">&#9776;</div>
+        </nav>
+    </header>
 
-<header>
-    <div class="logo">ASDM Fam Hospital</div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="About">About</a></li>
-            <li><a href="check_up_packages">Check-up Packages</a></li>
-            <li><a href="Testimonals">Testimonials</a></li>
-            <li><a href="Contact">Contact</a></li>
-            <li><a href="Our_specialities">Our Specialities</a></li>
-            <li><a href="logout">Logout</a></li>
-        </ul>
-        <div class="menu-toggle">&#9776;</div>
-    </nav>
-</header>
+    <section class="main">
+        <div class="content">
+            <h1>Exceptional Medical Care for All Ages.</h1>
+            <p>At our Medical Center, we combine world-class medicine with compassionate care.</p>
+            <a href="booking" class="btn">Book an appointment</a>
+        </div>
+        <div class="image">
+            <img src="{% static 'imges/doctor2.jpg' %}" alt="Doctor">
+        </div>
+    </section>
 
-<section class="main">
-    <div class="content">
-        <h1>Exceptional Medical Care for All Ages.</h1>
-        <p>At our Medical Center, we combine world-class medicine with compassionate care.</p>
-        <!-- <a href="booking" class="btn">Book an appointment</a> -->
-        <a href="booking" class="btn" style="background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; transition: background 0.3s;">
-            Book an appointment
-        </a>
-        
-        <style>
-            .btn:hover {
-                background: linear-gradient(45deg, #0056b3, #007bff); /* Reverse gradient on hover */
-            }
-        </style>
-    </div>
-    <div class="image">
-        <img src="{% static 'imges/doctor2.jpg' %}" alt="Doctor">
-    </div>
-</section>
-
-
-    <h1><a href="#" style="font-weight: bold; text-decoration: none;">Today Available Doctors</a></h1>
-
-    <style>
-        .card {
-            border-radius: 10px;
-            border: 2px solid #854fe7;
-            padding: 10px;
-            text-align: center;
-        }
-        .card img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-    </style>
-    
-    <!-- Doctors Section -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Custom CSS for additional styling */
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .card-title {
-            color: #007bff;
-            font-weight: bold;
-        }
-        .btn-primary {
-            background-color: #007bff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-        .card-text {
-            color: #555;
-        }
-    </style>
-</head>
-<body>
-    <div class="container mt-3">
+    <div class="container">
+        <h1 style="text-align: center; color: #00d1b2; margin-bottom: 30px;">Today Available Doctors</h1>
         <div class="row">
             {% for pro in Doctor %}
-            <!-- Each card takes 6 columns on medium screens and above, creating 2 cards per row -->
             <div class="col-md-6 mb-4">
-                <div class="card h-100">
-                    <!-- Uncomment the line below if images are available -->
-                    <!-- <img class="card-img-top" src="{{ pro.img.url }}" alt="Doctor Image" style="width: 100%; height: 200px; object-fit: cover;"> -->
+                <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">{{ pro.name }}</h4>
                         <h5 class="card-title">Speciality: {{ pro.specialty }}</h5>
                         <p class="card-text">Available Day: {{ pro.available_day }}</p>
                         <p class="card-text">Time: {{ pro.available_time_start }} - {{ pro.available_time_end }}</p>
-                        <a href="../book_appointment" class="btn btn-primary">Book an Appointment</a>
+                        <a href="../book_appointment" class="btn-primary">Book an Appointment</a>
                     </div>
                 </div>
             </div>
@@ -259,269 +405,84 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS (optional, for interactive components) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-        {% if forloop.counter0|add:1|divisibleby:2 or forloop.last %} <!-- Close row every 2 items -->
+    <div class="services-section">
+        <h1>24 X 7 Services</h1>
+        <div class="services-container">
+            <div class="service-box">
+                <img src="{% static 'imges/icu.png' %}" alt="ICU Icon">
+                <h2>ICU</h2>
+                <p>Our ICU services are at the core of many of our life-saving treatments.</p>
+            </div>
+            <div class="service-box">
+                <img src="{% static 'imges/ambulnce.png' %}" alt="Ambulance Icon">
+                <h2>Ambulance</h2>
+                <p>Our critical care ambulances provide timely and quality pre-hospital emergency care.</p>
+            </div>
+            <div class="service-box">
+                <img src="{% static 'imges/radiol.png' %}" alt="Radiology Icon">
+                <h2>Radiological Investigations</h2>
+                <p>Experience unparalleled convenience with our 24/7 radiological investigations.</p>
+            </div>
+            <div class="service-box">
+                <img src="{% static 'imges/pharm.png' %}" alt="Pharmacy Icon">
+                <h2>Pharmacy</h2>
+                <p>Available round the clock, our pharmacy is well-stocked with high-quality medicines.</p>
+            </div>
+            <div class="service-box">
+                <img src="{% static 'imges/lab.png' %}" alt="Laboratory Icon">
+                <h2>Laboratory</h2>
+                <p>We have a 24/7 lab equipped with modern equipment utilizing the latest technology.</p>
+            </div>
+            <div class="service-box">
+                <img src="{% static 'imges/op.png' %}" alt="Operation Theatre Icon">
+                <h2>Operation Theatre Services</h2>
+                <p>Our OT complex is designed to work round the clock with state-of-the-art facilities.</p>
+            </div>
+            <div class="service-box">
+                <img src="{% static 'imges/emer.png' %}" alt="Emergency Icon">
+                <h2>Emergency and Trauma Care</h2>
+                <p>Our 24-hour emergency and trauma care protocols guarantee the highest levels of skill.</p>
+            </div>
+            <div class="service-box">
+                <img src="{% static 'imges/hae.png' %}" alt="Haemodialysis Icon">
+                <h2>Haemodialysis</h2>
+                <p>The Dialysis Unit provides lifesaving treatment for patients with chronic nephrotic diseases.</p>
+            </div>
         </div>
-        {% endif %}
-      
     </div>
-    
-    
 
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9f9f9;
-    }
-
-    .services-section {
-        text-align: center;
-        padding: 40px 20px;
-    }
-
-    .services-section h1 {
-        font-size: 2em;
-        color: #000;
-        margin-bottom: 30px;
-    }
-
-    .services-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .service-box {
-        background-color: #ffeef2;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        width: 250px;
-        text-align: center;
-    }
-
-    .service-box img {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 15px;
-    }
-
-    .service-box h2 {
-        font-size: 1.2em;
-        color: #333;
-        margin-bottom: 10px;
-    }
-
-    .service-box p {
-        font-size: 0.95em;
-        color: #666;
-        line-height: 1.5;
-    }
-
-    @media (max-width: 768px) {
-        .service-box {
-            width: 90%;
-        }
-    }
-</style>
-</head>
-<body>
-
-<div class="services-section">
-<h1>24 X 7 Services</h1>
-<div class="services-container">
-    <div class="service-box">
-        <img src="{%static 'imges/icu.png' %}" alt="ICU Icon">
-        <h2>ICU</h2>
-        <p>Our ICU services are at the core of many of our life-saving treatments. Patients are monitored round the clock in sterile, infection-safe environments.</p>
-    </div>
-    <div class="service-box">
-        <img src="{%static 'imges/ambulnce.png' %}" alt="Ambulance Icon">
-        <h2>Ambulance</h2>
-        <p>Our critical care ambulances provide timely and quality pre-hospital emergency care and interhospital transfer for serious and injured patients.</p>
-    </div>
-    <div class="service-box">
-        <img src="{%static 'imges/radiol.png' %}" alt="Radiology Icon">
-        <h2>Radiological Investigations</h2>
-        <p>Experience unparalleled convenience with our 24/7 radiological investigations. We prioritize accurate and prompt results anytime, day or night.</p>
-    </div>
-    <div class="service-box">
-        <img src="{%static 'imges/pharm.png' %}" alt="Pharmacy Icon">
-        <h2>Pharmacy</h2>
-        <p>Available round the clock, our pharmacy is well-stocked with high-quality medicines and manned by competent staff.</p>
-    </div>
-    <div class="service-box">
-        <img src="{%static 'imges/lab.png' %}" alt="Laboratory Icon">
-        <h2>Laboratory</h2>
-        <p>We have a 24/7 lab equipped with modern equipment utilizing the latest technology to help doctors and specialists administer evidence-based treatments.</p>
-    </div>
-    <div class="service-box">
-        <img src="{%static 'imges/op.png' %}" alt="Operation Theatre Icon">
-        <h2>Operation Theatre Services</h2>
-        <p>Our OT complex is designed to work round the clock with state-of-the-art facilities to perform basic and advanced laparoscopic surgeries safely.</p>
-    </div>
-    <div class="service-box">
-        <img src="{%static 'imges/emer.png' %}" alt="Emergency Icon">
-        <h2>Emergency and Trauma Care</h2>
-        <p>Our 24-hour emergency and trauma care protocols guarantee the highest levels of skill, expertise, and infrastructure for urgent cases.</p>
-    </div>
-    <div class="service-box">
-        <img src="{%static 'imges/hae.png' %}" alt="Haemodialysis Icon">
-        <h2>Haemodialysis</h2>
-        <p>The Dialysis Unit provides lifesaving treatment for patients with chronic nephrotic diseases, ensuring their ongoing health needs are met.</p>
-    </div>
-</div>
-</div>
-
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    footer {
-        background-color: #f8f8f8;
-        color: #333;
-        padding: 20px 0;
-    }
-
-    .footer-container {
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .footer-section {
-        flex: 1;
-        margin: 15px;
-        min-width: 200px;
-    }
-
-    .footer-section h3 {
-        font-size: 18px;
-        margin-bottom: 10px;
-        color: #000;
-    }
-
-    .footer-section ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-section ul li {
-        margin-bottom: 8px;
-    }
-
-    .footer-section ul li a {
-        text-decoration: none;
-        color: #007bff;
-        transition: color 0.3s;
-    }
-
-    .footer-section ul li a:hover {
-        color: #0056b3;
-    }
-
-    .footer-section p {
-        line-height: 1.6;
-    }
-
-    .footer-section a {
-        color: #007bff;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    .footer-section a:hover {
-        color: #0056b3;
-    }
-
-    .footer-section .social-icons a img {
-        width: 30px;
-        height: 30px;
-        margin: 0 10px;
-        transition: transform 0.3s;
-    }
-
-    .footer-section .social-icons a img:hover {
-        transform: scale(1.2);
-    }
-
-    .footer-section .app-store img {
-        max-width: 150px;
-        margin-top: 10px;
-    }
-
-    .footer-bottom {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 14px;
-        color: #666;
-    }
-
-    .footer-bottom a {
-        color: #007bff;
-        text-decoration: none;
-    }
-
-    .footer-bottom a:hover {
-        color: #0056b3;
-    }
-</style>
-</head>
-<body>
-<footer>
-<div class="footer-container">
-    <div class="footer-section logo">
-        <!-- <img src="muthoot-logo.png" alt="Muthoot Healthcare Logo"> -->
-        <p>ASDM Fam Hospital</p>
-    </div>
-    <div class="footer-section links">
-        <h3>Links</h3>
-        <ul>
-            <li><a href="#">Doctors</a></li>
-            <li><a href="#">Specialities</a></li>
-            <!-- <li><a href="#">Photo Gallery</a></li>
-            <li><a href="#">Home Care</a></li>
-            <li><a href="#">Careers</a></li> -->
-        </ul>
-    </div>
-    <div class="footer-section contact">
-        <h3>Contact</h3>
-        <p>Address: ASDM Fam Hospitals,<br>Chennai<br>Chennai, Tamilnadu</p>
-        <p>Phone: <a href="tel:04682203500">0468 220 3500</a></p>
-        <p>Email: <a href="mailto:asdmfam@222.com">asdmfam@222.com</a></p>
-        <p>PRO: <a href="tel:+919447722370">+91 94477 22370</a></p>
-    </div>
-    <div class="footer-section follow">
-        <h3>Follow</h3>
-        <div class="social-icons">
-            <a href="#"><img src="{%static 'imges/facebook-logo.png' %}" alt="Facebook"></a>
-            <a href="#"><img src="{%static 'imges/twitter(1).png' %}" alt="Twitter"></a>
-            <a href="#"><img src="{%static 'imges/instagram(2).png' %}" alt="Instagram"></a>
-            <a href="#"><img src="{%static 'imges/youtube(1).png' %}" alt="YouTube"></a>
-            <a href="#"><img src="{%static 'imges/linkedin(1).png' %}" alt="LinkedIn"></a>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section logo">
+                <p>ASDM Fam Hospital</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Doctors</a></li>
+                    <li><a href="#">Specialities</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact</h3>
+                <p>Address: ASDM Fam Hospitals, Chennai, Tamilnadu</p>
+                <p>Phone: <a href="tel:04682203500">0468 220 3500</a></p>
+                <p>Email: <a href="mailto:asdmfam@222.com">asdmfam@222.com</a></p>
+            </div>
+            <div class="footer-section follow">
+                <h3>Follow</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="{% static 'imges/facebook-logo.png' %}" alt="Facebook"></a>
+                    <a href="#"><img src="{% static 'imges/twitter(1).png' %}" alt="Twitter"></a>
+                    <a href="#"><img src="{% static 'imges/instagram(2).png' %}" alt="Instagram"></a>
+                    <a href="#"><img src="{% static 'imges/youtube(1).png' %}" alt="YouTube"></a>
+                    <a href="#"><img src="{% static 'imges/linkedin(1).png' %}" alt="LinkedIn"></a>
+                </div>
+            </div>
         </div>
-        <!-- <div class="app-store">
-            <a href="#"><img src="google-play-badge.png" alt="Get it on Google Play"></a>
-        </div> -->
-    </div>
-</div>
-<div class="footer-bottom">
-    <p>Copyright © 2024 ASDM Fam Hospitals | Designed & Developed by <a href="#">NetIndia</a></p>
-</div>
-</footer>
+        <div class="footer-bottom">
+            <p>Copyright © 2024 ASDM Fam Hospitals | Designed & Developed by <a href="#">NetIndia</a></p>
+        </div>
+    </footer>
 </body>
-</htm
+</html>

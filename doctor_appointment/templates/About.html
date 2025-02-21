@@ -4,15 +4,15 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Care Landing Page</title>
+    <title>ASDM Fam Hospital</title>
     <style>
         /* General body styling */
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #e5e5e5;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e2f;
+            color: #ffffff;
         }
 
         /* Header styling */
@@ -20,43 +20,52 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: #2a2a40;
+            padding: 15px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
-        header .logo {
-            font-size: 1.5rem;
+        .logo {
+            font-size: 22px;
             font-weight: bold;
-            color: #333;
+            color: #00d1b2;
         }
 
-        header nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        nav {
             display: flex;
+            align-items: center;
         }
 
-        header nav ul li {
-            margin: 0 15px;
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
         }
 
-        header nav ul li a {
+        .nav-links li a {
             text-decoration: none;
-            color: #333;
-            font-size: 1rem;
+            color: #ffffff;
+            font-weight: bold;
             transition: color 0.3s;
         }
 
-        header nav ul li a:hover {
-            color: #007bff;
+        .nav-links li a:hover {
+            color: #00d1b2;
         }
 
-        /* About Section Styling */
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* About Section */
         .about-section {
             padding: 50px 20px;
-            background-color: #f8fcff;
+            background-color: #2a2a40;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .container {
@@ -94,136 +103,60 @@
             font-size: 32px;
             font-weight: bold;
             margin-bottom: 20px;
+            color: #ffffff;
         }
 
         p {
             line-height: 1.6;
-            color: #333;
+            color: #cccccc;
             margin-bottom: 15px;
         }
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #f23568;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #00d1b2, #009e8e);
+            color: white;
             text-decoration: none;
+            font-weight: bold;
             border-radius: 30px;
-            margin-top: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 209, 178, 0.3);
         }
 
         .btn:hover {
-            background-color: #d72d5e;
-        }
-
-        /* Chat Button */
-        .chat-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 15px 20px;
-            font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #ff4081;
-            border: none;
-            border-radius: 30px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-        }
-
-        .chat-btn:hover {
-            background-color: #e63974;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo">ASDM Fam Hospital</div>
-        <nav>
-            <ul>
-                
-                <li><a href="About">About</a></li>
-                <li><a href="check_up_packages">Check-Up Packages</a></li>
-                <li><a href="Testimonals">Testimonials</a></li>
-                <li><a href="Contact">Contact</a></li>
-                <li><a href="Manage">Manage</a></li>
-                <li><a href="logout">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
-            <!-- Left Column -->
-            <div class="col-left">
-                <h5>About Us</h5>
-                <h2>ASDM Fam Hospital</h2>
-                <p>In the short span of its existence, ASDM Fam Hospital has created its niche on the map of quality healthcare delivery in South India by touching nearly 2 million lives. Having earned the trust and loyalty of patients through the compassion of its caregivers and high-precision medical technology, the institution has emerged as the leading quaternary care facility in the region</p>
-                <p>ASDM Fam  Hospital, established in 2014 was a thoughtful initiative from the renowned ASDM (CMI) group of institutions to offer quality and affordable medical care to the common man. The legacy of ASDM in pioneering a distinctive culture in the educational sector has helped them carve an exemplary medical institution in Tamilnadu. The hospital is well laid out in a 40 acre green landscape in the serene setting of Tamilnadu and is the closest facility to the Thanjavur International Airport. </p>
-                <p>The consistent pursuit of achieving uncompromised excellence in healthcare has won ASDM Fam Hospital many accolades and appreciation on national and international platforms. The Hospital is accredited by the Joint Commission International (JCI) with the gold seal for complying with the highest international standards on patient safety and quality of care. The hospital is also accredited by the National Accreditation Board for Hospitals and Healthcare Providers (NABH), National Accreditation Board for Testing and Calibration Laboratories (NABL) and has received ISO 22000:2018 certification for its Food & Beverages services.</p>
-            </div>
-
-            <!-- Right Column -->
-            <div class="col-right">
-                <img src="{%static 'imges/hospital.jpg' %}" alt="Hospital Interior">
-            </div>
-        </div>
-    </section>
-
-    <!-- Chat Button -->
-    <!-- <button class="chat-btn">Chat With Us</button> -->
-
-
-    <style>
-        /* General Body Styling */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f8fcff;
-            color: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 209, 178, 0.5);
         }
 
         /* Vision & Mission Section */
         .vision-mission-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 50px;
-            background-color: #fff;
+            padding: 50px 20px;
+            background-color: #2a2a40;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         .vision-mission-container {
             display: flex;
-            max-width: 1200px;
-            width: 100%;
+            flex-wrap: wrap;
+            align-items: center;
             gap: 30px;
         }
 
         .vision-mission-left img {
-            width: 100%;
+            max-width: 100%;
             border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .vision-mission-right {
             flex: 1;
         }
 
-        .vision-mission-right h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
         .vision-mission-right h4 {
             font-style: italic;
-            color: #666;
+            color: #cccccc;
             margin-bottom: 15px;
         }
 
@@ -237,7 +170,7 @@
             font-size: 1rem;
             display: flex;
             align-items: center;
-            color: #555;
+            color: #cccccc;
         }
 
         .vision-mission-right ul li::before {
@@ -246,54 +179,174 @@
             color: #f23568;
         }
 
-        /* Appointment Button */
-        .btn-appointment {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1rem;
+        /* Message Section */
+        .message-section {
+            padding: 50px 20px;
+            background-color: #2a2a40;
+            margin: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
             font-weight: bold;
-            color: #fff;
-            background-color: #25D366; /* WhatsApp green */
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .author {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #cccccc;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cccccc;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .message-highlight {
+            font-weight: bold;
+            color: #f23568;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2a2a40;
+            color: #ffffff;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 15px;
+            min-width: 200px;
+        }
+
+        .footer-section h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #00d1b2;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
             text-decoration: none;
-            border-radius: 30px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            color: #ffffff;
+            transition: color 0.3s;
         }
 
-        .btn-appointment:hover {
-            background-color: #1aa34a;
+        .footer-section ul li a:hover {
+            color: #00d1b2;
         }
 
-        /* Chat Button */
-        .chat-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            padding: 15px 20px;
+        .footer-section p {
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .footer-section .social-icons a img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            transition: transform 0.3s;
+        }
+
+        .footer-section .social-icons a img:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
             font-size: 14px;
-            font-weight: bold;
-            color: #fff;
-            background-color: #ff4081;
-            border: none;
-            border-radius: 30px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
+            color: #cccccc;
         }
 
-        .chat-btn:hover {
-            background-color: #e63974;
+        .footer-bottom a {
+            color: #00d1b2;
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: #009e8e;
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const navLinks = document.querySelector(".nav-links");
+
+            menuToggle.addEventListener("click", function () {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
 </head>
 <body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">ASDM Fam Hospital</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="About">About</a></li>
+                <li><a href="check_up_packages">Check-Up Packages</a></li>
+                <li><a href="Testimonals">Testimonials</a></li>
+                <li><a href="Contact">Contact</a></li>
+                <li><a href="Manage">Manage</a></li>
+                <li><a href="logout">Logout</a></li>
+            </ul>
+            <div class="menu-toggle">&#9776;</div>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="col-left">
+                <h5>About Us</h5>
+                <h2>ASDM Fam Hospital</h2>
+                <p>In the short span of its existence, ASDM Fam Hospital has created its niche on the map of quality healthcare delivery in South India by touching nearly 2 million lives. Having earned the trust and loyalty of patients through the compassion of its caregivers and high-precision medical technology, the institution has emerged as the leading quaternary care facility in the region.</p>
+                <p>ASDM Fam Hospital, established in 2014, was a thoughtful initiative from the renowned ASDM (CMI) group of institutions to offer quality and affordable medical care to the common man. The legacy of ASDM in pioneering a distinctive culture in the educational sector has helped them carve an exemplary medical institution in Tamilnadu. The hospital is well laid out in a 40-acre green landscape in the serene setting of Tamilnadu and is the closest facility to the Thanjavur International Airport.</p>
+                <p>The consistent pursuit of achieving uncompromised excellence in healthcare has won ASDM Fam Hospital many accolades and appreciation on national and international platforms. The Hospital is accredited by the Joint Commission International (JCI) with the gold seal for complying with the highest international standards on patient safety and quality of care. The hospital is also accredited by the National Accreditation Board for Hospitals and Healthcare Providers (NABH), National Accreditation Board for Testing and Calibration Laboratories (NABL) and has received ISO 22000:2018 certification for its Food & Beverages services.</p>
+            </div>
+            <div class="col-right">
+                <img src="{% static 'imges/hospital.jpg' %}" alt="Hospital Interior">
+            </div>
+        </div>
+    </section>
+
     <!-- Vision & Mission Section -->
     <section class="vision-mission-section">
         <div class="vision-mission-container">
-            <!-- Left Image -->
             <div class="vision-mission-left">
-                <img src="{%static 'imges/vision-mission.jpg' %}" alt="Family Image">
+                <img src="{% static 'imges/vision-mission.jpg' %}" alt="Family Image">
             </div>
-            <!-- Right Content -->
             <div class="vision-mission-right">
                 <h2>Our Vision & Mission</h2>
                 <h4>"To give life abundantly"</h4>
@@ -302,379 +355,66 @@
                     <li>To undertake specialized and holistic healthcare services of world standard and provide them to all sections of society, with special concern for the marginalized.</li>
                     <li>To grow into a model & global leader in healthcare, innovative teaching in medical sciences, & pioneering research on health.</li>
                 </ul>
-                <!-- <a href="https://wa.me/your-number" class="btn-appointment">Book an appointment</a> -->
             </div>
         </div>
     </section>
 
-    <!-- Chat Button -->
-    <!-- <button class="chat-btn">Chat With Us</button> -->
-
-
-    <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Custom CSS */
-    .message-section {
-      background-color: #ffffff; /* White background */
-      padding: 60px 20px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Smooth shadow for depth */
-      position: relative;
-      overflow: hidden;
-    }
-
-    .message-section::before {
-      content: "";
-      position: absolute;
-      top: -50px;
-      left: -50px;
-      width: 200px;
-      height: 200px;
-      background-color: #2980b9; /* Circular accent */
-      border-radius: 50%;
-      opacity: 0.2;
-      z-index: 1;
-    }
-
-    .message-section::after {
-      content: "";
-      position: absolute;
-      bottom: -50px;
-      right: -50px;
-      width: 250px;
-      height: 250px;
-      background-color: #2ecc71; /* Circular accent */
-      border-radius: 50%;
-      opacity: 0.2;
-      z-index: 1;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #2c3e50; /* Dark color for text */
-      text-align: center;
-      margin-bottom: 30px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .author {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #34495e; /* Slightly lighter text for contrast */
-      text-align: center;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .message {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #555555; /* Neutral gray for content */
-      text-align: justify;
-      margin-bottom: 15px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .message-highlight {
-      font-weight: bold;
-      color: #e74c3c; /* Vibrant red for key points */
-    }
-  </style>
-</head>
-<body>
-  <section class="message-section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h2 class="section-title">Message From Executive Director</h2>
-          <p class="author">Rev. Fr. Johnson Vazhappilly CMI - Executive Director</p>
-          <p class="message">
-            <span class="message-highlight">Greetings from ASDM Fam Hospital!!!</span>
-          </p>
-          <p class="message">
-            With great pride, we have extended our Healthcare ministry in the canonization 
-            year of our founder, St. Kuriakose Elias Chavara. Rajagiri has carved a unique 
-            and pioneering legacy in the education field and we wish to follow the best of 
-            that tradition in life care services too.
-          </p>
-          <p class="message">
-            We are ready to address the growing healthcare needs of our society 
-            through ASDM Fam Hospital.
-          <h5>
-          Wishing you the best of experiences with us at Rajagiri Healthcare.
-          </h5>
+    <!-- Message Section -->
+    <section class="message-section">
+        <div class="container">
+            <h2 class="section-title">Message From Executive Director</h2>
+            <p class="author">Rev. Fr. Johnson Vazhappilly CMI - Executive Director</p>
+            <p class="message">
+                <span class="message-highlight">Greetings from ASDM Fam Hospital!!!</span>
+            </p>
+            <p class="message">
+                With great pride, we have extended our Healthcare ministry in the canonization year of our founder, St. Kuriakose Elias Chavara. Rajagiri has carved a unique and pioneering legacy in the education field, and we wish to follow the best of that tradition in life care services too.
+            </p>
+            <p class="message">
+                We are ready to address the growing healthcare needs of our society through ASDM Fam Hospital.
+            </p>
+            <h5>Wishing you the best of experiences with us at Rajagiri Healthcare.</h5>
             <h3>Rev. Fr. Johnson Vazhappilly CMI</h3>
-
-            <h6>
-                Executive Director & CEO, ASDM Fam Hospital
-            </h6>
-
-          </p>
+            <h6>Executive Director & CEO, ASDM Fam Hospital</h6>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
-<!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-  /* Custom CSS */
-  .message-section {
-    background-color: #ffffff; /* White background */
-    padding: 60px 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Smooth shadow for depth */
-    position: relative;
-    overflow: hidden;
-  }
-
-  .message-section::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 200px;
-    height: 200px;
-    background-color: #2980b9; /* Circular accent */
-    border-radius: 50%;
-    opacity: 0.2;
-    z-index: 1;
-  }
-
-  .message-section::after {
-    content: "";
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    width: 250px;
-    height: 250px;
-    background-color: #2ecc71; /* Circular accent */
-    border-radius: 50%;
-    opacity: 0.2;
-    z-index: 1;
-  }
-
-  .section-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #2c3e50; /* Dark color for text */
-    text-align: center;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .author {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #34495e; /* Slightly lighter text for contrast */
-    text-align: center;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .message {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555555; /* Neutral gray for content */
-    text-align: justify;
-    margin-bottom: 15px;
-    position: relative;
-    z-index: 2;
-  }
-
-  .message-highlight {
-    font-weight: bold;
-    color: #e74c3c; /* Vibrant red for key points */
-  }
-</style>
-</head>
-<body>
-<section class="message-section">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10">
-        <h2 class="section-title">Message from
-            Medical Director </h2>
-        <p class="author">Dr. Gigy Kuruttukulam -
-            Medical Director </p>
-        <!-- <p class="message">
-          <span class="message-highlight">Medical Director
-
-            Excellent infrastructure with corporate ambience, state-of-art technology, professionals of highest caliber with maximum emphasis in nursing care and backed by the legacy of CMI and proven track record of Rajagiri Province, will make a model healthcare, education and research institution, where quality of service will be the key and where each and every client will have a fully satisfying and unforgettable experience of “Life and Life in Abundance” at truly affordable cost. </span>
-        </p> -->
-        <p class="message">
-            Medical Director
-
-            Excellent infrastructure with corporate ambience, state-of-art technology, professionals of highest caliber with maximum emphasis in nursing care and backed by the legacy of CMI and proven track record of Rajagiri Province, will make a model healthcare, education and research institution, where quality of service will be the key and where each and every client will have a fully satisfying and unforgettable experience of “Life and Life in Abundance” at truly affordable cost. 
-        </p>
-        <h6>My best wishes to all. Stay Safe.
-        </h6>
-        <h5>Dr. Gigy Kuruttukulam</h5>
-        <h4>Medical Director, ASDM Fam Hospital</h4>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    footer {
-        background-color: #f8f8f8;
-        color: #333;
-        padding: 20px 0;
-    }
-
-    .footer-container {
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .footer-section {
-        flex: 1;
-        margin: 15px;
-        min-width: 200px;
-    }
-
-    .footer-section h3 {
-        font-size: 18px;
-        margin-bottom: 10px;
-        color: #000;
-    }
-
-    .footer-section ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .footer-section ul li {
-        margin-bottom: 8px;
-    }
-
-    .footer-section ul li a {
-        text-decoration: none;
-        color: #007bff;
-        transition: color 0.3s;
-    }
-
-    .footer-section ul li a:hover {
-        color: #0056b3;
-    }
-
-    .footer-section p {
-        line-height: 1.6;
-    }
-
-    .footer-section a {
-        color: #007bff;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    .footer-section a:hover {
-        color: #0056b3;
-    }
-
-    .footer-section .social-icons a img {
-        width: 30px;
-        height: 30px;
-        margin: 0 10px;
-        transition: transform 0.3s;
-    }
-
-    .footer-section .social-icons a img:hover {
-        transform: scale(1.2);
-    }
-
-    .footer-section .app-store img {
-        max-width: 150px;
-        margin-top: 10px;
-    }
-
-    .footer-bottom {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 14px;
-        color: #666;
-    }
-
-    .footer-bottom a {
-        color: #007bff;
-        text-decoration: none;
-    }
-
-    .footer-bottom a:hover {
-        color: #0056b3;
-    }
-</style>
-</head>
-<body>
-<footer>
-<div class="footer-container">
-    <div class="footer-section logo">
-        <!-- <img src="muthoot-logo.png" alt="Muthoot Healthcare Logo"> -->
-        <p>ASDM Fam Hospital</p>
-    </div>
-    <div class="footer-section links">
-        <h3>Links</h3>
-        <ul>
-            <li><a href="#">Doctors</a></li>
-            <li><a href="#">Specialities</a></li>
-            <li><a href="#">Photo Gallery</a></li>
-            <li><a href="#">Home Care</a></li>
-            <li><a href="#">Careers</a></li>
-        </ul>
-    </div>
-    <div class="footer-section contact">
-        <h3>Contact</h3>
-        <p>Address: ASDM Fam Hospitals,<br>Chennai<br>Chennai, Tamilnadu</p>
-        <p>Phone: <a href="tel:04682203500">0468 220 3500</a></p>
-        <p>Email: <a href="asdmfam@222.com">asdmfam@222.com</a></p>
-        <p>PRO: <a href="tel:+919447722370">+91 94477 22370</a></p>
-    </div>
-    <div class="footer-section follow">
-        <h3>Follow</h3>
-        <div class="social-icons">
-            <a href="#"><img src="{%static 'imges/facebook-logo.png' %}" alt="Facebook"></a>
-            <a href="#"><img src="{%static 'imges/twitter(1).png' %}" alt="Twitter"></a>
-            <a href="#"><img src="{%static 'imges/instagram(2).png' %}" alt="Instagram"></a>
-            <a href="#"><img src="{%static 'imges/youtube(1).png' %}" alt="YouTube"></a>
-            <a href="#"><img src="{%static 'imges/linkedin(1).png' %}" alt="LinkedIn"></a>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section logo">
+                <p>ASDM Fam Hospital</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="#">Doctors</a></li>
+                    <li><a href="#">Specialities</a></li>
+                    <li><a href="#">Photo Gallery</a></li>
+                    <li><a href="#">Home Care</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact</h3>
+                <p>Address: ASDM Fam Hospitals, Chennai, Tamilnadu</p>
+                <p>Phone: <a href="tel:04682203500">0468 220 3500</a></p>
+                <p>Email: <a href="mailto:asdmfam@222.com">asdmfam@222.com</a></p>
+            </div>
+            <div class="footer-section follow">
+                <h3>Follow</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="{% static 'imges/facebook-logo.png' %}" alt="Facebook"></a>
+                    <a href="#"><img src="{% static 'imges/twitter(1).png' %}" alt="Twitter"></a>
+                    <a href="#"><img src="{% static 'imges/instagram(2).png' %}" alt="Instagram"></a>
+                    <a href="#"><img src="{% static 'imges/youtube(1).png' %}" alt="YouTube"></a>
+                    <a href="#"><img src="{% static 'imges/linkedin(1).png' %}" alt="LinkedIn"></a>
+                </div>
+            </div>
         </div>
-        <!-- <div class="app-store">
-            <a href="#"><img src="google-play-badge.png" alt="Get it on Google Play"></a>
-        </div> -->
-    </div>
-</div>
-<div class="footer-bottom">
-    <p>Copyright © 2024 ASDM Fam Hospitals | Designed & Developed by <a href="#">NetIndia</a></p>
-</div>
-</footer>
-
+        <div class="footer-bottom">
+            <p>Copyright © 2024 ASDM Fam Hospitals | Designed & Developed by <a href="#">NetIndia</a></p>
+        </div>
+    </footer>
 </body>
 </html>

@@ -1,104 +1,81 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Patients</title>
     <style>
-        /* Reset some default styles */
-        * {
+        /* General body styling */
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e2f;
+            color: #ffffff;
         }
-    
+
         /* Navbar container */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: white;
+            background-color: #2a2a40;
             padding: 15px 30px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
-    
+
         /* Logo */
         .navbar .logo {
             font-size: 22px;
             font-weight: bold;
-            color: #222;
+            color: #00d1b2;
             text-decoration: none;
         }
-    
+
         /* Navigation menu */
         .navbar .nav-links {
             list-style: none;
             display: flex;
             gap: 20px;
         }
-    
+
         .nav-links li {
             display: inline;
         }
-    
+
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #ffffff;
             font-size: 16px;
             padding: 8px 12px;
             transition: 0.3s;
         }
-    
+
         .nav-links a:hover {
-            color: #007bff;
+            color: #00d1b2;
         }
-    
+
         /* Responsive Navbar */
         @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 align-items: flex-start;
             }
-    
+
             .nav-links {
                 flex-direction: column;
                 width: 100%;
                 gap: 10px;
             }
         }
-    </style>
-    </head>
-    <body>
-    
-    <nav class="navbar">
-        <a href="#" class="logo">ASDM Fam Hospital</a>
-        <ul class="nav-links">
-            <li><a href="../About">About</a></li>
-            <li><a href="/">Check-up Packages</a></li>
-            <li><a href="../Testimonials">Testimonials</a></li>
-            <li><a href="../Contact">Contact</a></li>
-            <li><a href="../Our Specialities">Our Specialities</a></li>
-            <li><a href="../logout">Logout</a></li>
-        </ul>
-    </nav>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Patients</title>
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            color: #333;
-        }
 
+        /* Testimonial Section */
         .testimonial-section {
             width: 100%;
             padding: 60px 20px;
-            background: #fff;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: #2a2a40;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             border-radius: 12px;
             margin: 40px auto;
             max-width: 1200px;
@@ -135,20 +112,20 @@
         }
 
         .testimonial-title {
-            color: #2e7d72;
+            color: #00d1b2;
             font-size: 28px;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
         .testimonial-subtitle {
-            color: #777;
+            color: #cccccc;
             font-size: 18px;
             margin-bottom: 20px;
         }
 
         .testimonial-quote {
-            color: #444;
+            color: #ffffff;
             font-size: 16px;
             font-style: italic;
             line-height: 1.8;
@@ -178,7 +155,7 @@
         .testimonial-author {
             font-size: 18px;
             font-weight: bold;
-            color: #2e7d72;
+            color: #00d1b2;
             margin-top: 10px;
         }
 
@@ -192,7 +169,7 @@
         }
 
         .carousel-btn {
-            background-color: #2e7d72;
+            background-color: #00d1b2;
             color: white;
             border: none;
             padding: 15px 20px;
@@ -204,7 +181,7 @@
         }
 
         .carousel-btn:hover {
-            background-color: #1e5e55;
+            background-color: #009e8e;
             transform: scale(1.1);
         }
 
@@ -231,11 +208,25 @@
     </style>
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo">ASDM Fam Hospital</a>
+        <ul class="nav-links">
+            <li><a href="../About">About</a></li>
+            <li><a href="/">Check-up Packages</a></li>
+            <li><a href="../Testimonials">Testimonials</a></li>
+            <li><a href="../Contact">Contact</a></li>
+            <li><a href="../Our Specialities">Our Specialities</a></li>
+            <li><a href="../logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Testimonial Section -->
     <section class="testimonial-section">
         <div class="testimonial-carousel" id="carousel">
             <div class="testimonial-card active">
                 <div class="testimonial-image">
-                    <img src="{%static 'imges/testg2.png' %}" alt="Patient Image">
+                    <img src="{% static 'imges/testg2.png' %}" alt="Patient Image">
                 </div>
                 <h2 class="testimonial-title">HAPPY PATIENTS</h2>
                 <p class="testimonial-subtitle">Patient Testimonials and Reviews</p>
@@ -246,7 +237,7 @@
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-image">
-                    <img src="{%static 'imges/test1.png' %}" alt="Patient Image">
+                    <img src="{% static 'imges/test1.png' %}" alt="Patient Image">
                 </div>
                 <h2 class="testimonial-title">HAPPY PATIENTS</h2>
                 <p class="testimonial-subtitle">Patient Testimonials and Reviews</p>
@@ -257,7 +248,7 @@
             </div>
             <div class="testimonial-card">
                 <div class="testimonial-image">
-                    <img src="{%static 'imges/test1.png' %}" alt="Patient Image">
+                    <img src="{% static 'imges/test1.png' %}" alt="Patient Image">
                 </div>
                 <h2 class="testimonial-title">HAPPY PATIENTS</h2>
                 <p class="testimonial-subtitle">Patient Testimonials and Reviews</p>
