@@ -15,6 +15,8 @@ from .models import Appointment, Doctor
 from django.template.loader import get_template  
 
 
+
+
 # Create your views here.
 
 def doctor_appointment_login(req):
@@ -372,3 +374,6 @@ def view_bookings(request):
 
     appointments = Appointment.objects.select_related('doctor_name').all()
     return render(request, 'view_bookings.html', {'appointments': appointments})
+
+
+
